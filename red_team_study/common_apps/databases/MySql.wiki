@@ -1,0 +1,9 @@
+===MySql===
+
+
+
+Has a command line interface to manage it simply called mysql, to specify a user use the -u flag
+basic command:
+```bash
+	mysql -u {username} -p'{password}' -h {remote server ip or name} -P {port} -D {DB name}
+```

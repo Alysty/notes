@@ -1,0 +1,8 @@
+=Secure Shell(ssh)=
+
+- port 22
+
+Tool used to remote access a machine and open a shell session on it
+
+normally used in the following way "ssh login@ip"
+

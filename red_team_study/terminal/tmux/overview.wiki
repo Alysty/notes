@@ -1,0 +1,14 @@
+===Tmux===
+
+Tmux is a terminal multiplexer, it is used to have multiple shell sessions withing one windows and jumping between them with ease
+
+Defaults:
+	To start giving command to Tmux after starting it use the command [CTRL + B]:
+		- c => creates new Tmux window
+		- "a number" => open that window
+		- [SHIFT + %] => split vertically
+		- [SHIFT + "] => split horizontally
+		- [ARROW KEYS] => move between windows
+		- [&] => close current window
+link to more complete [cheatsheet](https://tmuxcheatsheet.com/)
+

@@ -1,0 +1,11 @@
+=File transfer protocol(FTP)=
+
+- port 21
+
+Program used to transfer files using the command line in a rather easy manner
+
+can have an account with login name anonymous by default
+
+response for successful login is 230
+
+to read a dir do ls and to get a file do a get

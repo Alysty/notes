@@ -1,0 +1,4 @@
+probably the easiest way to access files in another machine is just running a python server like the following
+
+
+python3 -m http.server

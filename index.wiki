@@ -1,0 +1,15 @@
+
+
+
+===Red Team Study===
+- common apps
+	- file transfer
+		- [[./red_team_study/common_apps/file_transfer/ftp.wiki|ftp]]
+	- python
+		- [[./red_team_study/common_apps/python/server.wiki|server]]
+	- remote access
+		- [[./red_team_study/common_apps/remote_access/netcat.wiki|netcat]]
+		- [[./red_team_study/common_apps/remote_access/ssh.wiki|ssh]]
+- information_gathering
+	- [[./red_team_study/common_apps/remote_access/netcat.wiki|netcat]]
+

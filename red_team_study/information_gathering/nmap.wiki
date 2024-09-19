@@ -1,0 +1,7 @@
+===nmap===
+
+
+nmap flags:
+	-p {number} => specify port
+	-p {number}-{number} => specify port range
+	-top-ports {number} => scan the most used ports

@@ -1,0 +1,9 @@
+=Netcat(nc)=
+
+Netcat can be used in many ways, but it is basically used to interact with UDP and TCP ports.
+
+the most basic usage is to grab a banner like the following 
+```bash
+$ netcat 10.10.10.10 22
+SSH-2.0-OpenSSH_8.4p1 Debian-3
+```
