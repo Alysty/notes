@@ -2,14 +2,33 @@
 
 
 ===Red Team Study===
+- [[./red_team_study/notes.wiki|notes]]
 - common apps
+	- databases
+		- [[./red_team_study/common_apps/databases/MariaDB.wiki|MariaDB]]
+		- [[./red_team_study/common_apps/databases/MySql.wiki|MySql]]
 	- file transfer
 		- [[./red_team_study/common_apps/file_transfer/ftp.wiki|ftp]]
+		- [[./red_team_study/common_apps/file_transfer/smb.wiki|smb]]
 	- python
 		- [[./red_team_study/common_apps/python/server.wiki|server]]
 	- remote access
 		- [[./red_team_study/common_apps/remote_access/netcat.wiki|netcat]]
 		- [[./red_team_study/common_apps/remote_access/ssh.wiki|ssh]]
+- exploit
+	- [[./red_team_study/exploit/metasploit/basic.wiki|metasploit]]
+	- search
+		- [[./red_team_study/exploit/search/searchsploit.wiki|searchsploit]]
+- general
+	- [[./red_team_study/general/curl.wiki|curl]]
 - information_gathering
+	- web_enumeration
+		- [[./red_team_study/information_gathering/web_enumeration/gobuster.wiki|gobuster]]
+		- [[./red_team_study/information_gathering/web_enumeration/whatweb.wiki|whaweb]]
 	- [[./red_team_study/common_apps/remote_access/netcat.wiki|netcat]]
+	- [[./red_team_study/common_apps/remote_access/nmap.wiki|nmap]]
+	- [[./red_team_study/common_apps/remote_access/smbclient.wiki|smbclient]]
+	- [[./red_team_study/common_apps/remote_access/snmpwalk.wiki|snmpwalk]]
+- terminal
+	- [[./red_team_study/terminal/tmux/overview.wiki|tmux]]
 

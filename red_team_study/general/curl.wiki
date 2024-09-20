@@ -1,0 +1,17 @@
+===curl===
+
+Curl is a command line tool that can transfer data on the web, it will be mainly used to make web requests.
+
+flags:
+	- -o --output {file} => writes output to specific file
+	- -u {user}:{pass} => used to provide auth to the request
+	- -v => verbose mode
+	- -vv => very verbose mode
+	- -i => include http header
+	- -I => show only http header
+	- -X {request type} => used to define request type like POST or GET
+	- -d '{data}'|@{filename} => data to be sent
+	- -A {user agent name} => user agent to use
+	- -b {cookie name}={value}|{file} => sets cookies
+	- -H "{header name}: {value} => sets header
+	- -k --insecure => disable ssl check

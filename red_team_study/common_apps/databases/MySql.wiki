@@ -1,5 +1,6 @@
 ===MySql===
 
+- port 3306
 
 
 Has a command line interface to manage it simply called mysql, to specify a user use the -u flag

@@ -1,0 +1,13 @@
+===SNMP(Simple Network Management Protocol)===
+
+protocol for collecting information about managed devices in a network, can also be used to change the behavior of some devices
+
+Default port:
+	- port 161
+	- port 162
+	- port 10161
+	- port 10162 (Secure SMTP)
+list devices that use this protocol the most:
+	cable modems, routers, network switches, servers, workstations, printers
+
+SNMP version 1 and 2 are very insecure with encryption and authentication capabilities being added only in version 3

@@ -1,0 +1,40 @@
+===Gobuster===
+
+From [https://www.kali.org/tools/gobuster/]:
+Gobuster is a tool used to brute-force: URIs (directories and files) in web sites, DNS subdomains (with wildcard support), Virtual Host names on target web servers, Open Amazon S3 buckets, Open Google Cloud buckets and TFTP servers.
+
+The way this tool will probably be used the most is in search directories and files in a website
+
+commands:
+	- dir         Uses directory/file enumeration mode
+	- dns         Uses DNS subdomain enumeration mode
+	- fuzz        Uses fuzzing mode. Replaces the keyword FUZZ in the URL, Headers and the request body
+	- completion  Generate the autocompletion script for the specified shell
+	- gcs         Uses gcs bucket enumeration mode
+	- help        Help about any command
+	- s3          Uses aws bucket enumeration mode
+	- tftp        Uses TFTP enumeration mode
+	- version     shows the current version
+	- vhost       Uses VHOST enumeration mode (you most probably want to use the IP address as the URL parameter)
+	
+Flags:
+	- --debug => Enable debug output
+	- --delay {duration in ms} => Time each thread waits between requests (e.g. 1500ms)
+	- -h, --help => help for gobuster
+	- --no-color => Disable color output
+	- --no-error => Don't display errors
+	- -z, --no-progress => Don't display progress
+	- -o, --output {file} => Output file to write results to (defaults to stdout)
+	- -p, --pattern {file} => File containing replacement patterns
+	- -q, --quiet => Don't print the banner and other noise
+	- -t, --threads {int} => Number of concurrent threads (default 10)
+	- -v, --verbose => Verbose output (errors)
+	- -w, --wordlist {string} => Path to the wordlist. Set to - to use STDIN.
+	- --wordlist-offset {int} => Resume from a given position in the wordlist (defaults to 0)
+	
+
+basic example:
+```bash
+	gobuster dir -u http://10.10.10.10/ -w /usr/share/seclists/Discovery/Web-Content/common.txt
+```
+seclist can be found in here [https://github.com/danielmiessler/SecLists] these are various lists that can be used with different Red team tools

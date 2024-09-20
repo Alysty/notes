@@ -1,4 +1,7 @@
 ===MariaDB===
+
+- port 3306 
+  
 A fork of [[./MySql.wiki|MySql]] 
 
 

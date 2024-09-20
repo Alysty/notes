@@ -2,8 +2,12 @@
 
 Netcat can be used in many ways, but it is basically used to interact with UDP and TCP ports.
 
-the most basic usage is to grab a banner like the following 
+the most basic usage is to try to connect to a service on a specific port like the following 
 ```bash
 $ netcat 10.10.10.10 22
 SSH-2.0-OpenSSH_8.4p1 Debian-3
 ```
+
+flags:
+	-n => ignore name resolution and just use the ip address
+	-v => verbose output

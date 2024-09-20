@@ -1,0 +1,2 @@
+
+to search ports using the project wide search use "- port {number}" 
