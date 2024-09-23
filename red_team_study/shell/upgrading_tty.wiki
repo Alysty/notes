@@ -1,0 +1,17 @@
+===upgrading tty===
+
+Normally when you get shell access to a target using the command mentioned in the [./reverse_shell.wiki] and [./bind_shell.wiki] files you will get a very simple text input and output
+
+To get access to a more complete shell that has history and maybe even auto complete for paths you will need to upgrade the shell. This can be done in many ways, one is detailed bellow:
+
+"inside target using your current shell"
+	python -c 'import pty; pty.spawn("/bin/bash")' => spawns a more complete shell
+	^Z => puts the process with the shell on the background
+"in your machine"
+	stty raw -echo => disables terminal typing echo 
+	fg
+"inside target using your current shell"
+	[enter]
+	[enter]
+	
+Your shell should be upgraded

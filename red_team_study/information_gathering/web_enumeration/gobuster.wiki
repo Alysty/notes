@@ -34,7 +34,6 @@ Flags:
 	
 
 basic example:
-```bash
 	gobuster dir -u http://10.10.10.10/ -w /usr/share/seclists/Discovery/Web-Content/common.txt
-```
+
 seclist can be found in here [https://github.com/danielmiessler/SecLists] these are various lists that can be used with different Red team tools

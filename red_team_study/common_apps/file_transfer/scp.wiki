@@ -1,0 +1,11 @@
+=== scp ===
+
+scp is a command line too used to transfer files, it connects to systems in a very similar way to ssh, with the addition of the files that must be copied
+
+some basic examples of usage are
+
+	scp arthur@10.10.10.10:/etc/passwd .
+	
+	scp ./42.sh arthur@10.10.10.10:~/
+	
+We can also use the "-P {port number}" flag to specify a port

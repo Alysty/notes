@@ -4,13 +4,10 @@ A client to access [[../common_apps/file_transfer/smb.wiki|SMB]] shares,
  examples of usage:
  
  listing available shares:
- ```bash
 	smbclient -N -L \\\\10.10.10.10 
- ```
+
 connecting to share shares:
- ```bash
 	smbclient \\\\10.10.10.10\\sharename
- ```
 
 
 the \ are there since network paths start with \\

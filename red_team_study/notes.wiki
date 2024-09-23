@@ -1,2 +1,5 @@
 
-to search ports using the project wide search use "- port {number}" 
+The wiki is expected to have a high amount of repetition in the name of the files, specially tools that fit in multiple of the categories, but the information itself should not be repeated a lot and to prevent repetition the file links should be used
+
+
+To search default ports using the project wide search use "- port {number}" 

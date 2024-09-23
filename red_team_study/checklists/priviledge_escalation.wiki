@@ -1,0 +1,19 @@
+== Checklist of things to check for privilege escalation ==
+===automated===
+	The most complete script for checking for paths of privilege escalation in all major systems is the [[https://github.com/peass-ng/PEASS-ng|PEASS project]]
+	There are also some older and/or less used scripts like:
+	==== Linux ====
+		[[https://github.com/rebootuser/LinEnum|LinEnum]]
+		[[https://github.com/sleventyeleven/linuxprivchecker|LinuxPrivChecker]]
+	==== Windows ====
+		[[https://github.com/GhostPack/Seatbelt|Seatbelt]]
+		[[https://github.com/411Hall/JAWS|JAWS]]
+	Remember that every script is probably very noisy and can normally set of alarms in systems with appropriate invasion detection
+===manual===
+	==== Linux ====
+		[[https://book.hacktricks.xyz/linux-hardening/linux-privilege-escalation-checklist|HackTricks Checklist]]
+		[[https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.09/23/2024|PayloadOfAllThingsChecklist]]
+	==== Windows ====
+		[[https://book.hacktricks.xyz/windows-hardening/checklist-windows-privilege-escalation|HackTricks Checklist]]
+		[[https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md|PayloadOfAllThingsChecklist]]
+

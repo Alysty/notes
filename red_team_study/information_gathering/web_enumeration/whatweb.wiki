@@ -3,10 +3,6 @@
 Tool used to find the version of different webservers 
 
 basic usage:
-```bash
 	whatweb 10.10.10.10
-```
-multiple requests at once
-```bash
+multiple requests at once to multiple hosts
 	whatweb 10.10.0.0/16
-```

@@ -1,3 +1,14 @@
-[[../remote_access/netcat.wiki|netcat.wiki]]
+===Netcat(nc)===
 
+Netcat can be used in many ways, but it is basically used to interact with UDP and TCP ports.
+
+the most basic usage is to try to connect to a service on a specific port like the following 
+
+netcat 10.10.10.10 22
+
+flags:
+	-n => ignore name resolution and just use the IP address
+	-v => verbose output
+	-l => listen mode, it wait for a request to it instead of sending one out
+	-p {port number} => defines the port to be used
 

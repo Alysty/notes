@@ -1,0 +1,52 @@
+===nmap===
+
+nmap is one of the best tool for scanning hosts
+
+the most basic way to use it is to do "nmap {IP}", this will scan the top 1000 most common TCP ports and return basic information found about them,
+but the program can do way more then that.
+
+Before using the following things it is important to know the syntax should always be
+
+	nmap {scripts/type of scan} {options} {target} 
+
+the target can be an IP range like 10.10.10.0/24 and also multiple IPs like 10.10.10.2 10.10.10.3
+but it is probably better to not enable port scanning on wide searches like this one since that can make the scan take a very long time
+
+nmap flags:
+	==== port specification ====
+	- -p {number} => specify port
+	- -p {number}-{number} => specify port range
+	- -p- => scan all ports
+	- -top-ports {number} => scan the most used ports
+	- -sU => UDP scan
+	==== service info ====
+	- -sC => try to get more detailed info about the services
+	- -sV => tries to get the version of the services
+	==== Os info ====
+	- -A => Enable OS detection, version detection, script scanning, and traceroute
+	- --osscan-limit => Limit OS detection to promising targets
+	- --osscan-guess => Guess OS more aggressively
+	==== host discovery ====
+  	- -sn => Ping Scan - disable port scan
+  	- --traceroute => Trace hop path to each host
+	==== timing and performance ====
+	- -T<0-5> => Set timing template (higher is faster)
+	==== Output handling ====
+	- -oN {file name} => Output scan in normal to the given filename.
+	- -oX {file name} => Output scan in XML to the given filename.
+	- -oS {file name} => Output scan in  s|<rIpt kIddi3 to the given filename.
+	- -oG {file name} => Output scan in Grepable format to the given filename.
+	- -oA {basename for the files} => Output in the three major formats at once
+	- -v => Increase verbosity level (use -vv or more for greater effect)
+	- -d => Increase debugging level (use -dd or more for greater effect)
+	- --reason => Display the reason a port is in a particular state
+	- --open => Only show open (or possibly open) ports
+	- --packet-trace => Show all packets sent and received
+	- --stats-every={number of seconds}s => Show results every x amount of seconds
+	==== misc ====
+	- -iL {targets.txt} => define targets from a file
+	- --script {script name} => run a specific script against the target, scripts are probably at /usr/share/nmap/scripts/
+	
+common scripts:
+	- --script=banner => A simple banner grabber which connects to an open TCP port and prints out anything sent by the listening service within five seconds.
+	- --script=smb-os-discovery.nse => gets some info from SMB

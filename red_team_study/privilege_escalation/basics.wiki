@@ -1,0 +1,19 @@
+=== privilege escalation === 
+
+It is common to gain access to a target system as a user with low privileges, and sometimes we may need to find ways to increase our on level of access using different exploits
+
+First one should try to get as much info as possible about the system to access if there is any path available for an exploit, a checklist of things to verify can be found on [[../checklists/priviledge_escalation.wiki|checklist]]
+
+
+Some of the main ways people are able to do privilege escalation are:
+	- Kernel Exploits
+	- Old and Vulnerable Software
+		- [[https://gtfobins.github.io/|GTFObins]] => list of commands and binaries that can escalate privileges
+	- Sudo being miss configured
+		- sudo -l => lists the permissions of this sudo users
+		- sudo su - => switches to root user without password
+		- [[https://gtfobins.github.io/|GTFObins]] => list of commands and binaries that can escalate privileges
+	- Scheduled Tasks => a lot of times scheduled tasks run with more privilege, so if we can create one we can create a new reverse shell
+		- Cron jobs
+
+
