@@ -2,10 +2,23 @@
 
 - port 21
 
-Program used to transfer files using the command line in a rather easy manner
+It is a clear text protocol used to transfer files using the command line in a rather easy manner
 
-can have an account with login name anonymous by default
+It can have an account with login name and password set to anonymous by default
 
-response for successful login is 230
+Response for successful login is 230
 
-to read a dir do ls and to get a file do a get
+====commands after connection====
+	- ls => read dir
+	- get => download file
+	- put => upload file from the current folder
+	- status => get info about the server
+
+FTP has 2 modes, active and passive. 
+Active mode the server initiates the connection of the file transfer (which is separate from the connection that sends commands).
+Passive mode the client is the one that initiates the connection.
+
+This might be relevant in cases where the firewall blocks the connection from being started in either the target or the host
+
+In some occasions it is possible to use wget to download all the files in the FTP server like the following 
+	wget -m --no-passive ftp://anonymous:anonymous@10.10.10.10

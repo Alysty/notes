@@ -30,7 +30,10 @@ nmap flags:
   	- -sn => Ping Scan - disable port scan
   	- --traceroute => Trace hop path to each host
 	==== timing and performance ====
-	- -T<0-5> => Set timing template (higher is faster)
+	- -T{0-5} => Set timing template (higher is faster),  default is 3
+	- --min-rate {number} => Send packets no slower than {number} per second
+	- --max-rate {number} => Send packets no faster than {number} per second
+	- --scan-delay/--max-scan-delay {time} => Adjust delay between probes
 	==== Output handling ====
 	- -oN {file name} => Output scan in normal to the given filename.
 	- -oX {file name} => Output scan in XML to the given filename.
@@ -49,4 +52,5 @@ nmap flags:
 	
 common scripts:
 	- --script=banner => A simple banner grabber which connects to an open TCP port and prints out anything sent by the listening service within five seconds.
+	- --script=vuln => This calls many different scripts to try to find vulnerabilities in the services that were found
 	- --script=smb-os-discovery.nse => gets some info from SMB

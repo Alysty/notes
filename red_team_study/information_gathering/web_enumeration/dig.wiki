@@ -1,0 +1,9 @@
+=== dig ===
+
+dig is a CLI tool used to get more information about DNS records, the most basic usage would be 
+	dig github.com
+	
+which would return the A records of github, dig also has many flags that allow for a more complete result such as
+	- ANY => returns all types of DNS records associated with the domain
+	- @ip => defines the DNS lookup service
+	- -x => reverse DNS lookups

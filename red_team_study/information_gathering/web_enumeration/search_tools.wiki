@@ -1,0 +1,7 @@
+=== search tools ===
+
+https://www.shodan.io/ => list of internet connected devices and services in those devices, it has many filters available for search, also has a [[https://cli.shodan.io/|cli interface]]
+
+https://domain.glas => Contains info about the DNS of a website an some info associated with the owners of the DNS
+
+https://buckets.grayhatwarfare.com/ => search engine for S3 buckets and its files
