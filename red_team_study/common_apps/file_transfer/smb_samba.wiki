@@ -1,0 +1,79 @@
+===SMB(Server Message Block) & Samba===
+
+
+
+SMB is a communication protocol normally found on windows, it is used to share access to files, printers and serial ports.
+
+- port 445
+- port 139
+- port 138
+- port 137
+
+The default port is 445 but it can also interact with the ports 139, 138 and 137 when running over NetBIOS to talk to old devices
+
+Versions 1 and 2 are considered to be vulnerable since they lack encryption, while version 3 and above had encryption methods added to it
+
+Linux systems would normally use Samba to interact with SMB. Samba uses CIFS, which is a specific implementation of SMB.
+
+Samba will normally use the 445 port.
+The config file for Samba can normally be found at "/etc/samba/smb.conf".
+
+You can try to list the available folders in a SMB share using "smbclient -N -L //10.10.10.110/"
+You can also try to directly connect to a SMB share using the "smbclient //10.10.10.110/folder_name" command to try to connect to a SMB share,
+after that the following commands will probably be the most useful:
+==== commands ====
+	- cd => same as linux cd
+	- del, rm {remote file} => same as linux rm
+	- rd {remote folder} => same as linux rm -rf
+	- dir => same as linux dir
+	- ls => same as linux ls
+	- put {local file}, {remote file} => upload
+	- get {remote file} => same as linux get
+	- history => same as linux history
+
+
+Another way to interact with a SMB server is using the application rpcclient
+
+Here are some commands to use rpcclient to connect to an SMB server (info from [[https://book.hacktricks.xyz/network-services-pentesting/pentesting-smb/rpcclient-enumeration|hacktricks]])
+	ps. 0xrid is the RID of the object being requested
+	====general====
+	- rpcclient -U {username} {ip} => tries to connect to the specified machine using the specified user
+	
+	==== Enumeration of Users ====
+	- querydispinfo & enumdomusers => list users
+	- queryuser {0xrid} => Shows details of the user
+	- queryusergroups {0xrid} => list groups of a user
+	- lookupnames {username} => gets user SID
+	- queryuseraliases {builtin|domain} {SID} => search alias of user
+	- to brute force user enumeration use "for i in $(seq 500 1100);do rpcclient -N -U "" 10.129.14.128 -c "queryuser 0x$(printf '%x\n' $i)" | grep "User Name\|user_rid\|group_rid" && echo "";done"
+ 
+	==== Server Information ====
+	- srvinfo => returns user information
+	
+	==== Enumeration of Groups ====
+	- enumdomgroups => list groups
+	- querygroup {0xrid} => get details of group
+	- querygroupmem {0xrid} => get members of group
+
+	==== Enumeration of Alias Groups ====
+	- enumalsgroups {builtin|domain} => get alias groups
+	- queryaliasmem builtin|domain {0xrid} => get members of alias groups
+
+	==== Enumeration of Domains ====
+	- enumdomains => get domains
+	- lsaquery => get domain SID
+	- querydominfo => get domain info
+
+	==== Enumeration of Shares ====
+	- netshareenumall => list available shares
+	- netsharegetinfo {share} => get share info
+
+	==== Additional Operations with SIDs ====
+	- lookupnames {username} => get SID by name
+	- lsaenumsid => list SIDs
+	- lookupsids {sid} => RID cycling to check more SIDs
+		
+
+It is also possible to use automated tools like [[https://github.com/fortra/impacket|impacket]], [[https://github.com/ShawnDEvans/smbmap|smbmap]] or the older [[https://github.com/CiscoCXSecurity/enum4linux|enum4linux]]
+
+

@@ -1,8 +1,0 @@
-===SMB(Server Message Block)===
-
-- port 445
-
-SMB is a communication protocol normally found on windows, it is used to share access to files, printers and serial ports.
-
-
-the default port is 445 but it can also interact with the ports 139, 138 and 137 when running over NetBIOS to talk to old devices
