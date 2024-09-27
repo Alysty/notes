@@ -1,6 +1,6 @@
-=== ssl certificates ===
+=== DNS ===
 
-ssl certificates can contain some important information about the target.
+ssl certificates can contain some important information about the target, specially DNS entries.
 
 One example is [[https://crt.sh/?q=github.com|this search]] about the github DNS certificates which contains multiple websites that are not listed on search engines, which could be attack vectors
 (crt.sh also allows for the flag "output=json" for easier filtering of the info)
@@ -41,4 +41,8 @@ RRSIG => Contains a cryptographic signature used to verify DNSSEC-signed data.
 RT => Specifies a route through a specific intermediate host, used for non-IP networks.
 TLSA => Links a domain name with a TLS certificate, used in DNS-based Authentication of Named Entities (DANE).
 X25 => Stores an X.25 network address used in older packet-switched networks.
+
+
+[[./dig.wiki|dig]] is an amazing tool to get info about a specific DNS.
+There are also tools like [[https://github.com/SparrowOchon/dnsenum2|dnsenum]] for bruteforcing DNS entries. 
 

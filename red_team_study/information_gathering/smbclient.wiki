@@ -4,13 +4,13 @@ A client to access [[../common_apps/file_transfer/smb.wiki|SMB]] shares,
  examples of usage:
  
  listing available shares:
-	smbclient -N -L \\\\10.10.10.10 
+	smbclient -N -L \\\\{ip} 
 
 connecting to share shares:
-	smbclient \\\\10.10.10.10\\sharename
+	smbclient \\\\{ip}\\sharename
 
 
-the \ are there since network paths start with \\
+the \ are there since network paths start with \\ and also need to be escaped on the terminal
 
 flags:
 	- -L => retrieve list of available shares

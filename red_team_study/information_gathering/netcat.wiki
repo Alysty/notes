@@ -4,7 +4,7 @@ Netcat can be used in many ways, but it is basically used to interact with UDP a
 
 the most basic usage is to try to connect to a service on a specific port like the following 
 
-netcat 10.10.10.10 22
+netcat {ip} 22
 
 flags:
 	-n => ignore name resolution and just use the IP address

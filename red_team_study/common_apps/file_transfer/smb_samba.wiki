@@ -18,8 +18,8 @@ Linux systems would normally use Samba to interact with SMB. Samba uses CIFS, wh
 Samba will normally use the 445 port.
 The config file for Samba can normally be found at "/etc/samba/smb.conf".
 
-You can try to list the available folders in a SMB share using "smbclient -N -L //10.10.10.110/"
-You can also try to directly connect to a SMB share using the "smbclient //10.10.10.110/folder_name" command to try to connect to a SMB share,
+You can try to list the available folders in a SMB share using "smbclient -N -L //{ip}/"
+You can also try to directly connect to a SMB share using the "smbclient //{ip}/folder_name" command to try to connect to a SMB share,
 after that the following commands will probably be the most useful:
 ==== commands ====
 	- cd => same as linux cd
@@ -34,7 +34,7 @@ after that the following commands will probably be the most useful:
 
 Another way to interact with a SMB server is using the application rpcclient
 
-Here are some commands to use rpcclient to connect to an SMB server (info from [[https://book.hacktricks.xyz/network-services-pentesting/pentesting-smb/rpcclient-enumeration|hacktricks]])
+Here are some commands to use rpcclient to connect to an SMB server (info from [[https://book.hacktricks.xyz/network-services-pentesting/pentesting-smb/rpcclient-enumeration|hacktricks]], but altered for my way of taking notes)
 	ps. 0xrid is the RID of the object being requested
 	====general====
 	- rpcclient -U {username} {ip} => tries to connect to the specified machine using the specified user

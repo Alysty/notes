@@ -21,4 +21,4 @@ Passive mode the client is the one that initiates the connection.
 This might be relevant in cases where the firewall blocks the connection from being started in either the target or the host
 
 In some occasions it is possible to use wget to download all the files in the FTP server like the following 
-	wget -m --no-passive ftp://anonymous:anonymous@10.10.10.10
+	wget -m --no-passive ftp://anonymous:anonymous@{ip}

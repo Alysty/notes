@@ -7,3 +7,4 @@ which would return the A records of github, dig also has many flags that allow f
 	- ANY => returns all types of DNS records associated with the domain
 	- @ip => defines the DNS lookup service
 	- -x => reverse DNS lookups
+	- axfr => get zone transfer file info (ps. only records with a SOA record can execute zone transfer)

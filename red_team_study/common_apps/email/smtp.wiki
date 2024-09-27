@@ -1,0 +1,49 @@
+=== SMTP(Simple Mail Transfer Protocol) ===
+
+
+ - port 25
+ - port 587
+ - port 465 (old)
+
+
+SMTP is a server used to handle emails. It can have a wide variety of configurations and authentication methods.
+These day most servers use ESMTP, which uses TLS and starttls for a secure connection.
+There is also POP3 and IMAP, which are normally used together with SMTP, they are protocols normally used for storing emails and downloading them.
+
+
+To connect to SMTP server we can normally do the command:
+	nc -vn {ip} 25
+To connect to an SMTP server that has TLS and/or starttls enabled we have the following ways:
+	openssl s_client -crlf -connect {ip}:465 => SSL/TLS without starttls command
+	openssl s_client -starttls smtp -crlf -connect {ip}:587 => SSL/TLS with starttls command
+	
+
+
+(Info from [[https://serversmtp.com|serversmtp]])
+==== SMTP commads ====
+ - HELO => It’s the first SMTP command: is starts the conversation identifying the sender server and is generally followed by its domain name.
+ - EHLO => An alternative command to start the conversation, underlying that the server is using the Extended SMTP protocol.
+ - MAIL FROM => With this SMTP command the operations begin: the sender states the source email address in the “From” field and actually starts the email transfer.
+ - RCPT TO => It identifies the recipient of the email; if there are more than one, the command is simply repeated address by address.
+ - SIZE => This SMTP command informs the remote server about the estimated size (in terms of bytes) of the attached email. It can also be used to report the maximum size of a message to be accepted by the server.
+ - DATA => With the DATA command the email content begins to be transferred; it’s generally followed by a 354 reply code given by the server, giving the permission to start the actual transmission.
+ - VRFY => The server is asked to verify whether a particular email address or username actually exists. If result has code 252 it is important to test a nonsense.
+ - TURN => This command is used to invert roles between the client and the server, without the need to run a new connection.
+ - AUTH => With the AUTH command, the client authenticates itself to the server, giving its username and password. It’s another layer of security to guarantee a proper transmission.
+ - RSET => It communicates the server that the ongoing email transmission is going to be terminated, though the SMTP conversation won’t be closed (like in the case of QUIT).
+ - EXPN => This SMTP command asks for a confirmation about the identification of a mailing list.
+ - HELP => It’s a client’s request for some information that can be useful for the successful transfer of the email.
+ - QUIT => It terminates the SMTP conversation.
+
+
+==== SMTP codes ====
+look in [[https://serversmtp.com/smtp-error/|this link]] but some important ones are:
+	- 250 => Its typical side message is “Requested mail action okay completed”: meaning that the server has transmitted a message. The opposite of an error: everything has worked and your email has been delivered.
+	- 252 => The server cannot verify the user, but it will try to deliver the message anyway. The recipient’s email account is valid, but not verifiable. Normally the server relays the message to another one that will be able to check it.
+
+for [[../../information_gathering/nmap/nmap.wiki|nmap]] scripts we have the following
+	nmap -p25 --script smtp-commands {ip} => Attempts to use EHLO and HELP to gather the Extended commands supported by an SMTP server.
+	nmap -p25 --script smtp-open-relay {ip} -v => Attempts to relay mail by issuing a predefined combination of SMTP commands. The goal of this script is to tell if a SMTP server is vulnerable to mail relaying. An SMTP server that works as an open relay, is a email server that does not verify if the user is authorised to send email from the specified email address. Therefore, users would be able to send email originating from any third-party email address that they want. 
+	nmap -p25 --script smtp-ntlm-info {ip} => This script enumerates information from remote SMTP services with NTLM authentication enabled.
+
+

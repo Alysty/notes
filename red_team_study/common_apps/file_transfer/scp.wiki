@@ -4,8 +4,8 @@ scp is a command line too used to transfer files, it connects to systems in a ve
 
 some basic examples of usage are
 
-	scp arthur@10.10.10.10:/etc/passwd .
+	scp {username}@{ip}:/etc/passwd .
 	
-	scp ./42.sh arthur@10.10.10.10:~/
+	scp ./42.sh {username}@{ip}:~/
 	
 We can also use the "-P {port number}" flag to specify a port

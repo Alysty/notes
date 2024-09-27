@@ -3,6 +3,6 @@
 Tool used to find the version of different webservers 
 
 basic usage:
-	whatweb 10.10.10.10
+	whatweb {ip}
 multiple requests at once to multiple hosts
 	whatweb 10.10.0.0/16

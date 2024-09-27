@@ -15,4 +15,4 @@ A comprehensive list of commands can be found at [https://github.com/swisskyrepo
 
 
 We can normally connect to this listeners using the basic command
-	nc 10.10.10.1 1234
+	nc {ip} 1234
