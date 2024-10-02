@@ -6,3 +6,8 @@
 Has a command line interface to manage it simply called mysql, to specify a user use the -u flag
 basic command:
 	mysql -u {username} -p'{password}' -h {remote server ip or name} -P {port} -D {DB name}
+nmap also has many scripts to enumerate mysql, but they can be rather unrelaible
+
+important commands:
+	show database;
+	show tables;

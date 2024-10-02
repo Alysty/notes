@@ -1,0 +1,22 @@
+=== MSSql(Microsoft SQL) ===
+
+	- port 1433
+
+This is the proprietary SQL database made by microsoft, it normally runs on windows and special some integration with active directory and .NET
+
+MSSQL can be accessed with many different tools. The most common ones being the official [[https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16|SSMS]] for GUI and [[https://learn.microsoft.com/en-us/sql/tools/mssql-cli?view=sql-server-ver16|mssql-cli]] for the cli.
+
+There are some open source alternatives, one being [[https://github.com/fortra/impacket/blob/master/examples/mssqlclient.py|mssqlclient.py]], a basic connection command would be:
+	- python3 mssqlclient.py {user}@{ip} 
+
+Some MSSQL servers are configure to not allow connections from users not authenticated by windows(either local SAM user or active directory) which can lead to some difficulties in accessing the database.
+
+One important configuration that is often forgotten in MSSql is the sa user, this is a administrator user that can normally do anything on the database, it normally has the passwords "sa", "SQLServer" or sometimes even an empty password
+
+both nmap and metasploit have a variety of scripts to help enumerate MSSql
+
+A very complete nmap command([[https://github.com/SrivathsanNayak/ethical-hacking-notes|info from this link]]):
+	- sudo nmap --script ms-sql-info,ms-sql-empty-password,ms-sql-xp-cmdshell,ms-sql-config,ms-sql-ntlm-info,ms-sql-tables,ms-sql-hasdbaccess,ms-sql-dac,ms-sql-dump-hashes --script-args mssql.instance-port={port},mssql.username={username, normally sa},mssql.password={password},mssql.instance-name={instance name} -sV -p port {ip}
+
+
+

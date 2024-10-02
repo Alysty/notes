@@ -1,0 +1,27 @@
+=== IMAP(Internet Message Access Protocol) ===
+
+IMAP is often used together with [[./smtp.wiki|SMTP]] so manage emails, it has more capabilities then [[./POP3.wiki|POP3]] is used specifically to store, list, retrieve and delete emails and also organize them into folders.
+
+	- port 143
+	- port 993 (TLS)
+
+
+IMAP COMMANDS:
+ps, a lot of times you have to start all commands with the letter a like "a {command}" for it to work
+	- LOGIN {username} {password} => login
+	- LIST "{folder to list}" "{name mailbox to be listed, normally * to list all}" => This command will list all folders/mailboxes that you have permission to list.
+	- LSUB "{folder to list}" "{name mailbox to be listed, normally * to list all}" => This command will list all folders/mailboxes that you have permission to list and is subscribed to.
+	- SELECT "{inbox name}" => Selects mailbox or folder as the target of all next commands.
+	- UNSELECT "{inbox name} => Unselects mailbox or folder as the target of all next commands, making it so you can target something else.
+	- CLOSE => does the same as UNSELECT with the addition of making sure all emails set as DELETED are deleted
+	- FETCH {id} {flag that defines what to show} => gets the data from and email
+	- LOGOUT => exit connection
+	- CREATE "{inbox name}" => create inbox with this name
+	- DELETE "{inbox name}" => delete inbox with this name
+	- RENAME "{original name}" "{target name}" => rename inbox
+
+connect to IMAP SSL port
+	openssl s_client -connect {ip}:{port}
+
+notes:
+	to get the body of an email as text do "a fetch {id} BODY.PEEK[TEXT]"

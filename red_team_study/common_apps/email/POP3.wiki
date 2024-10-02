@@ -1,0 +1,21 @@
+=== POP3(Post Office Protocol 3) ===
+
+POP3 is often used together with [[./smtp.wiki|SMTP]] so manage emails, POP3 is used specifically to store, list, retrieve and delete emails.
+
+	- port 110 
+	- port 995 (TLS ports)
+
+POP3 commands:
+	- USER {user} => Login as specific user
+	- PASS {password} => login using specified password
+	- STAT => List number of messages, total mailbox size
+	- LIST => List messages and sizes
+	- RETR {id number} => Show specified
+	- DELE {id number} => Mark specified message for deletion
+	- RSET => Undo any changes
+	- QUIT => Logout (expunges messages if no RSET)
+	- TOP {msg_number} (number of lines} => Show a number of line form a specific message
+	- CAPA => Get capabilities
+
+connect to POP3 SSL port
+	openssl s_client -connect {ip}:{port}
