@@ -22,3 +22,6 @@ This might be relevant in cases where the firewall blocks the connection from be
 
 In some occasions it is possible to use wget to download all the files in the FTP server like the following 
 	wget -m --no-passive ftp://anonymous:anonymous@{ip}
+	
+to connect to ftp use 
+	ftp {ip}

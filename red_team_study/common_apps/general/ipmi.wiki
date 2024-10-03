@@ -1,0 +1,12 @@
+=== IPMI(Intelligent Platform Management Interface) ===
+
+	- port 623 UDP
+
+This is an specification used to access devices without utilizing the OS or BIOS. It is normally used to access a computer after system failure or when it is powered down.
+
+It can be used to monitor things about the computer, review hardware logs among other things.
+
+
+Normally one should use nmap or metasploit to try to get info from IPMI.
+
+IPMI can leak the hashes of the users it has in its database, which can then be cracked offline. Metasploit has a module to help with that.
