@@ -26,3 +26,9 @@ nc -vn 127.0.0.1 873
 raidroot
 @RSYNCD: AUTHREQD 7H6CqsHCPG06kRiFkKwD8g    <--- This means you need the password
 
+to list things in a target use
+	rsync --list-only {ip}::
+	or
+	rsync --list-only {ip}::{folder}
+to download use 
+	rsync {ip}::{file_path} {local_path}
