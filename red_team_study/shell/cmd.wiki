@@ -1,0 +1,42 @@
+=== cmd(Command Prompt) ===
+
+Legacy shell present on windows with less capabilities then [[./powershell.wiki|powershell]], but still useful. 
+
+To open CMD, without an exploit involved, we just need to do (Win + r) and type (cmd + Enter) or run C:\Windows\System32\cmd.exe
+
+
+Commands normally use either the "help {command}" or the "{command} /?" syntax to get information about how to use it.
+help by itself can also list some of the basic windows CMD programs
+
+Command history can be viewed using doskey /history
+
+basic commands:
+	echo => returns what you type after it as data 
+	dir => show directory content
+	tree => show directories and nested directories in a tree structure
+	mkdir  => make directory
+	rd  => delete directory, if directory contains files need the /S flag
+	del => deletes files and folders
+	ren => rename file
+	move => move files
+	copy => can copy single files or multiple with * notation
+	xcopy => can copy single files, multiple files, directories and all the things inside them with the flag /E
+	robocopy => can do everything that was mentioned in copy and xcopy and even more, like copying things to another computer over some protocols, but it is important to know that robocopy can have problems with max memory
+	more => used to read files from top to bottom
+	| => just like the linux pipe is passes the result of the first command to the seconds command
+	type => 'types' the content of a file to the terminal can be viewed as a cat for windows
+	fsutil => can manage most of the actions related to the file system
+	\> => overwrite contents of a file with the input
+	\>\> => append input to end of a file
+	\< => add the input to the left to the command that is on the right
+	& => run first command then seconds one
+	& => run first command then seconds one but only if the first one worked
+	systeminfo => return a lot of info about the system
+	hostname => get hostname
+	ver => get windows version
+	ipconfig => basic network information for the pc, use /all for more info
+	arp /a => get info on ips the host has interacted with, depending on configuration a lot of hosts might be missing
+	whoami => shows the user and the group of the user that is executing the command, the /priv flag can also reveal a lot about which permissions a user has and the /groups flag can reveal the groups the user is a part of. /all can also be used to get all the info.
+	net => Connects a computer to or disconnects a computer from a shared resource, or displays information about computer connections. The command also controls persistent net connections. Has many useful flags like "share", "user", "group", "view"
+	
+	

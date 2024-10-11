@@ -44,5 +44,6 @@ X25 => Stores an X.25 network address used in older packet-switched networks.
 
 
 [[./dig.wiki|dig]] is an amazing tool to get info about a specific DNS.
-There are also tools like [[https://github.com/SparrowOchon/dnsenum2|dnsenum]] for bruteforcing DNS entries. 
-
+[[https://github.com/SparrowOchon/dnsenum2|dnsenum]] for bruteforcing DNS entries. 
+[[https://linux.die.net/man/1/whois|whois]], which can get a few pieces of information from  a DNS by just doing "whois github.com"
+nslookup for windows usage

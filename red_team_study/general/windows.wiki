@@ -1,0 +1,14 @@
+=== windows ===
+
+[[../shell/cmd.wiki|cmd]]
+[[../shell/powershell.wiki|powershell]]
+
+
+Important files:
+	Location: 	Description:
+	C:\Windows\Temp => directory normally open to every user with read write and execute permissions.
+	C:\Users\{user}\AppData\Local\Temp => same as the above for only for an specific user.
+	C:\Users\Public => directory normally open to every user with read write and execute permissions. Used for sharing things between users.
+	C:\Program Files => folder for 64-bit.
+	C:\Program Files (x86) => Folder for all 32-bit.
+

@@ -1,0 +1,15 @@
+=== finger printing ===
+
+This encompasses various tools related to knowing not only the tools the target uses but also the versions of those tools
+
+
+Some common ones are 
+
+[[./nmap/nmap.wiki|nmap]] for various things
+[[https://github.com/EnableSecurity/wafw00f|wafw00f]] for WAFs
+[[https://builtwith.com|buildwith]], [[https://sitereport.netcraft.com/|netcraft]] and [[https://www.wappalyzer.com/|wappalyzer]] websites for getting technologies a website is using
+[[https://github.com/urbanadventurer/WhatWeb|WhatWeb]] for getting technologies a website is using, it is not updated often
+
+
+
+

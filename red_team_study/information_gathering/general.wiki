@@ -1,0 +1,7 @@
+=== general ===
+
+Some tools that are normally used for multiple things at once
+
+[[https://github.com/thewhiteh4t/FinalRecon|Final Recon]]
+[[https://github.com/laramies/theHarvester|theHarvester]]
+

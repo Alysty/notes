@@ -1,0 +1,7 @@
+=== OISINT(Open-source intelligence) ===
+
+Open source intelligence (OSINT) is the collection and analysis of data gathered from open sources 
+(overt sources and publicly available information) to produce actionable intelligence. (wikipedia)
+
+good website to start looking for things is [[https://osintframework.com/]]
+

@@ -1,0 +1,11 @@
+=== NFS(Network File System) ===
+
+	- port 111
+	- port 2049
+
+
+
+Used to transfer and access files between systems on a network
+
+
+when scanning for nfs it can return a initially confusing result in which it lists all currently running RPC services.
