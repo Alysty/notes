@@ -1,0 +1,13 @@
+=== crawlers ===
+
+crawlers are pieces of software that 'crawl' through websites using links and sometimes javascript code to find endpoints and other information about a page
+
+
+Some crawlers that should be kept in mind are 
+
+[[https://github.com/bhavsec/reconspider|ReconSpider]] is a simple crawler that has not been updated for a long time but is still useful
+
+
+Burp Suite Spider TODO
+
+OWASP ZAP TODO

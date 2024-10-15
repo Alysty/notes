@@ -8,35 +8,68 @@ To open CMD, without an exploit involved, we just need to do (Win + r) and type 
 Commands normally use either the "help {command}" or the "{command} /?" syntax to get information about how to use it.
 help by itself can also list some of the basic windows CMD programs
 
+
 Command history can be viewed using doskey /history
 
+some of the commands bellow need to have a .exe after the command to run on powershell
 basic commands:
-	echo => returns what you type after it as data 
-	dir => show directory content
-	tree => show directories and nested directories in a tree structure
-	mkdir  => make directory
-	rd  => delete directory, if directory contains files need the /S flag
-	del => deletes files and folders
-	ren => rename file
-	move => move files
-	copy => can copy single files or multiple with * notation
-	xcopy => can copy single files, multiple files, directories and all the things inside them with the flag /E
-	robocopy => can do everything that was mentioned in copy and xcopy and even more, like copying things to another computer over some protocols, but it is important to know that robocopy can have problems with max memory
-	more => used to read files from top to bottom
-	| => just like the linux pipe is passes the result of the first command to the seconds command
-	type => 'types' the content of a file to the terminal can be viewed as a cat for windows
-	fsutil => can manage most of the actions related to the file system
-	\> => overwrite contents of a file with the input
-	\>\> => append input to end of a file
-	\< => add the input to the left to the command that is on the right
-	& => run first command then seconds one
-	& => run first command then seconds one but only if the first one worked
-	systeminfo => return a lot of info about the system
-	hostname => get hostname
-	ver => get windows version
-	ipconfig => basic network information for the pc, use /all for more info
-	arp /a => get info on ips the host has interacted with, depending on configuration a lot of hosts might be missing
-	whoami => shows the user and the group of the user that is executing the command, the /priv flag can also reveal a lot about which permissions a user has and the /groups flag can reveal the groups the user is a part of. /all can also be used to get all the info.
-	net => Connects a computer to or disconnects a computer from a shared resource, or displays information about computer connections. The command also controls persistent net connections. Has many useful flags like "share", "user", "group", "view"
+	- echo => returns what you type after it as data 
+	- dir => show directory content
+	- tree => show directories and nested directories in a tree structure
+	- mkdir  => make directory
+	- rd  => delete directory, if directory contains files need the /S flag
+	- del => deletes files and folders
+	- ren => rename file
+	- move => move files
+	- copy => can copy single files or multiple with * notation
+	- xcopy => can copy single files, multiple files, directories and all the things inside them with the flag /E
+	- robocopy => can do everything that was mentioned in copy and xcopy and even more, like copying things to another computer over some protocols, but it is important to know that robocopy can have problems with max memory
+	- more => used to read files from top to bottom
+	- | => just like the linux pipe is passes the result of the first command to the seconds command
+	- type => 'types' the content of a file to the terminal can be viewed as a cat for windows
+	- fsutil => can manage most of the actions related to the file system
+	- \> => overwrite contents of a file with the input
+	- \>\> => append input to end of a file
+	- \< => add the input to the left to the command that is on the right
+	- & => run first command then seconds one
+	- & => run first command then seconds one but only if the first one worked
+	- systeminfo => return a lot of info about the system
+	- hostname => get hostname
+	- ver => get windows version
+	- ipconfig => basic network information for the pc, use /all for more info
+	- arp /a => get info on ips the host has interacted with, depending on configuration a lot of hosts might be missing
+	- whoami => shows the user and the group of the user that is executing the command, the /priv flag can also reveal a lot about which permissions a user has and the /groups flag can reveal the groups the user is a part of. /all can also be used to get all the info.
+	- net => Connects a computer to or disconnects a computer from a shared resource, or displays information about computer connections. The command also controls persistent net connections. Has many useful flags like "share", "user", "group", "view", it can also manage services on a basic level.
+	- where => looks for file on the paths present on the env variables, for general search the directory should be specified by using /R {directory} {file}
+	- find => search string on a file on syntax {text} {file}
+	- findstr => string search similar to grep
+	- comp => compare if 2 files are equal
+	- fc => compare 2 files and shows the differences in the text
+	- sort => sorts lines by alphabetical order
+	- set => used to manipulate env variables in the current session
+	- setx => used to manipulate env variables system wide, and in some cases, domain wide.
+	- sc => used to manager the services running on the machine. Specifics explained bellow.
+		- to query by state, pid and type we can use the 'sc query {search vector}= {search}' its important to note the spacing of the command
+		- to query by name simply use sc query {name of service}
+		- there are also commands like stop, start
+		- you can also configure a service using the command config like 'sc config {service_name} {config to be changed}= {value to change it to}', again specific spacing is important.
+	- tasklist => show all processes running on the pc, with flag /SVC can show all services associated with the processes
 	
-	
+
+
+env variables can be referenced using %{variable name}%, to get he info we can 'echo' the variable or do 'set %{variable name}%'
+you can also set the env variable by using 'set {variable name}={variable info}' or 'setx {variable name} {variable info}'
+to remove the variable just set it to an empty string with ""
+
+the most important env variables already present in all windows installations are: 
+	- PATH: path to folders where executable programs are picked from
+	- COMPUTERNAME: Name of the computer
+	- TEMP/TMP: Temp folder
+	- USERNAME: Your username
+	- HOMEPATH/USERPROFILE: Home directory
+	- windir: C:\Windows
+	- OS:Windos OS
+	- LOGONSERVER: Name of domain controller
+	- USERDNSDOMAIN: Domain name to use with DNS
+	- USERDOMAIN: Name of the domain
+
