@@ -1,0 +1,23 @@
+=== powershell ===
+
+Powershell is a more powerful shell then [[./cmd.wiki|CMD]] and it can be used to script and automate tasks very easily
+
+powershell can be called from the cmd by simply using the command powershell.exe
+
+A cmdlet as defined by Microsoft: "a single-feature command that manipulates objects in PowerShell."
+
+basic commands:
+	- Get_Help => get info on the usage of the cmdlet, this  information can get out of date with updates or might not be downloaded in the first place, for that see the command bellow
+	- Update-Help => update the info that is used in the Get-Help command
+	- Get-Location => get the path currently being used 
+	- Get-ChildItem => equivalent of ls, prints the basic info of the files and folders in a folder
+	- Set-Location => equivalent of cd, changes the directory being used
+	- Get-Content => equivalent of cat, gets the content of a file and prints it
+	- Get-Command => list available commands, can also be used for specific searches
+	- Get-History => get history of commands used in this session, to get the commands used by the user in other sessions use its necessary to print the file C:\Users\username\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
+	- Get-Alias => list all aliases present in powershell 
+	- Set-Alias => can be used to create an alias with the syntax -Name {new_name} -Value {value to be aliased}
+	- Clear-Host => same as clear or cls
+	- (CTRL+R) => allows for search the command history
+	- (CTRL+ALT+Shift+?) => will print all the shortcuts available
+	

